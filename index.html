@@ -1,18 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Light Shop</title>
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styleslighting</title>
+    <link rel="icon" type="image/jpeg" href="assets/images/logo.jpeg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'playfair': ['Playfair Display', 'serif'],
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        'gold': '#D4AF37',
+                        'light-gold': '#F5E6C8',
+                        'dark': '#1A1A1A',
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .section-title {
+                @apply text-3xl md:text-4xl font-playfair font-bold text-dark mb-6 relative;
+            }
+            .section-title:after {
+                @apply content-[''] absolute bottom-[-12px] left-0 w-16 h-1 bg-gold;
+            }
+            .btn-primary {
+                @apply bg-gold hover:bg-dark text-white font-poppins font-medium py-3 px-6 rounded transition duration-300 inline-block;
+            }
+            .btn-outline {
+                @apply border-2 border-gold hover:bg-gold text-dark hover:text-white font-poppins font-medium py-3 px-6 rounded transition duration-300 inline-block;
+            }
+        }
+    </style>
 </head>
-<body class="bg-white text-gray-800">
+<body class="font-poppins text-gray-700 bg-white">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-playfair font-bold text-dark">Styles<span class="text-gold">lighting</span></a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="hover:text-gold transition">Home</a>
+                <a href="#about" class="hover:text-gold transition">About</a>
+                <a href="#contact" class="hover:text-gold transition">Contact</a>
+            </div>
+           
+            <button class="md:hidden focus:outline-none" id="menu-toggle">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white py-4 px-4 shadow-lg" id="mobile-menu">
+            <a href="#home" class="block py-2 hover:text-gold">Home</a>
+            <a href="#about" class="block py-2 hover:text-gold">About</a>
+            <a href="#contact" class="block py-2 hover:text-gold">Contact</a>
 
-  <!-- Hero Section -->
-  <section class="h-screen flex items-center justify-center">
-    <h1 class="text-4xl font-bold">Welcome to Light Shop</h1>
-  </section>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="bg-gradient-to-r from-light-gold to-white py-20">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-playfair font-bold text-dark mb-6">Illuminate Your Space <span class="text-gold">With Style</span></h1>
+                <p class="text-lg mb-8">Discover Dubai's finest collection of modern lighting solutions at our Ras Al Khor showroom. Elegance meets innovation in every fixture.</p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#contact" class="btn-primary">Visit Our Showroom</a>
+                </div>
+            </div>
+            <div class="md:w-1/2">
+                <img src="assets/images/fistimage.jpeg" alt="Modern Chandelier" class="rounded-lg shadow-xl w-full">
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+ 
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <h2 class="section-title">Our Story</h2>
+                    <p class="mb-4">At <span class="font-bold text-gold">Styleslighting</span>, we believe lighting is more than just functionality—it's an art that defines spaces. Founded in Dubai, we've built a reputation for offering high-end lighting solutions that combine elegance, innovation, and durability.</p>
+                    <p class="mb-6">Our vision is to be the leading lighting destination in Dubai, inspiring customers with exceptional designs and unmatched service.</p>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <span class="text-gold mr-3 mt-1">✓</span>
+                            <p><span class="font-bold">Years of Expertise</span> – Deep knowledge of lighting trends and technologies.</p>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-gold mr-3 mt-1">✓</span>
+                            <p><span class="font-bold">Customer-Centric Approach</span> – Personalized service to match your needs.</p>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-gold mr-3 mt-1">✓</span>
+                            <p><span class="font-bold">Quality Assurance</span> – Every product meets the highest standards.</p>
+                        </div>
+                    </div>
+                    <a href="#contact" class="btn-primary mt-8">Get in Touch</a>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1583845112203-454c6bc6a37a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Styleslighting Showroom" class="rounded-lg shadow-xl w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title">Let's Brighten Your Day</h2>
+            <p class="mb-12 max-w-2xl">Have questions or need lighting advice? Reach out—we'd love to help!</p>
+            
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2">
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="font-playfair font-bold text-2xl mb-6">Contact Information</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <span class="text-gold mr-4 mt-1">📞</span>
+                                <div>
+                                    <h4 class="font-bold">Phone Numbers</h4>
+                                    <p>Landline: <a href="tel:044531052" class="hover:text-gold">04 453 1052</a></p>
+                                    <p>Mobile: <a href="tel:0562989729" class="hover:text-gold">056 298 9729</a></p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="text-gold mr-4 mt-1">📍</span>
+                                <div>
+                                    <h4 class="font-bold">Address</h4>
+                                    <p>BAB 05, Ras Al Khor, Dubai</p>
+                                    <p class="text-sm text-gray-500">(Near Dragon Mart, easy parking available)</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="text-gold mr-4 mt-1">📅</span>
+                                <div>
+                                    <h4 class="font-bold">Working Hours</h4>
+                                    <p>10:00 AM – 10:00 PM (Daily)</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="text-gold mr-4 mt-1">📮</span>
+                                <div>
+                                    <h4 class="font-bold">P.O. Box</h4>
+                                    <p>658537</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-8">
+                            <a href="https://maps.google.com" target="_blank" class="btn-outline inline-block">View Location on Map</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="font-playfair font-bold text-2xl mb-6">Send Us a Message</h3>
+                        <form class="space-y-4">
+                            <div>
+                                <label for="name" class="block mb-1">Your Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-1 focus:ring-gold">
+                            </div>
+                            <div>
+                                <label for="email" class="block mb-1">Email Address</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-1 focus:ring-gold">
+                            </div>
+                    
+                            <div>
+                                <label for="message" class="block mb-1">Your Message</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-1 focus:ring-gold"></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary w-full">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  
+      
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-8 md:mb-0">
+                    <h3 class="text-2xl font-playfair font-bold mb-4">Styles<span class="text-gold">lighting</span></h3>
+                    <p class="mb-4">Dubai's premier destination for exquisite modern lighting solutions.</p>
+                    <p>© 2023 Styleslighting. All rights reserved.</p>
+                </div>
+                <div class="mb-8 md:mb-0">
+                    <h4 class="font-bold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="hover:text-gold transition">Home</a></li>
+                        <li><a href="#about" class="hover:text-gold transition">About Us</a></li>
+                        <li><a href="#contact" class="hover:text-gold transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Contact Us</h4>
+                    <ul class="space-y-2">
+                        <li>BAB 05, Ras Al Khor, Dubai</li>
+                        <li><a href="tel:044531052" class="hover:text-gold transition">04 453 1052</a></li>
+                        <li><a href="tel:0562989729" class="hover:text-gold transition">056 298 9729</a></li>
+                        <li>Open: 10AM - 10PM (Daily)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<script src="js/main.js"></script>
 
 </body>
 </html>
